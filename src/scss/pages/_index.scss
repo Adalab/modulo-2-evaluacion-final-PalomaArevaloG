@@ -1,4 +1,23 @@
 .main__list {
-  padding-left: 2rem;
-  padding-bottom: 20px;
+    padding-left: 2rem;
+    padding-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.fav {
+    border: solid 2px red;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.list {
+    border: solid 2px blue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
