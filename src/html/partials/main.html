@@ -1,16 +1,18 @@
 <main class="page__main">
     <h1 class="title">Buscador de series</h1>
-    <form class="input">
-        <input class="input" type="text" placeholder="Introduce aquí tu serie" />
-        <button class="btn-search">Buscar</button>
+    <form class="form">
+        <input class="input js_input" id="show" type="text" placeholder="Introduce aquí tu serie" value="" />
+        <button class="btn-search js_btn-search">Buscar</button>
     </form>
-    <h2 class="fav-title">Mis series favoritas</h2>
-    <div class="container">
-        <ul class="fav">
-            Favoritas
-        </ul>
-        <ul class="list">
-            Lista
-        </ul>
-    </div>
+
+    <section class="container js_container">
+        <div class="favs">
+            <h2 class="fav-title">Mis series favoritas</h2>
+            <ul class="fav js_fav"></ul>
+        </div>
+        <div class="lists">
+            <h2 class="list-title">Resultado de la búsqueda</h2>
+            <ul class="list js_list"></ul>
+        </div>
+    </section>
 </main>
