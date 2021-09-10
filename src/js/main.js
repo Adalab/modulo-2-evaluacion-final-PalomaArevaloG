@@ -32,6 +32,7 @@ function paintShows() {
         const isFav = isFavorite(data);
         if (isFav) {
             favClass = "favorite";
+            favorites.innerHTML += html;
         } else {
             favClass = "";
         }
@@ -70,6 +71,7 @@ function handleFavs(ev) {
         arrayFavs.splice(favoritesFound, 1);
     }
     paintShows();
+    paintFavs();
 }
 
 function listenShows() {
@@ -90,6 +92,27 @@ function isFavorite(data) {
         return true;
     }
 }
+//pintar favs
+function paintFavs(ev) {
+    let htmlFav = "";
+    for (const fav of arrayFavs) {
+        if (fav.show.image === null) {
+            htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
+            htmlFav += `<div class="result js_result ">`;
+            htmlFav += `<h2 class="js_showName">${fav.show.name}</h2>`;
+            htmlFav += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
+            html += `</div></li>`;
+        } else {
+            htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
+            htmlFav += `<div class="result js_result ">`;
+            htmlFav += `<h2 class="js_showName">${fav.show.name}</h2>`;
+            htmlFav += `<img class="js-image" src="${fav.show.image.medium}"/>`;
+            htmlFav += `</div></li>`;
+        }
+    }
+    favorites.innerHTML = htmlFav;
+}
+
 // //almacenar
 // function LocalStorage() {}
 // //quitar favs
