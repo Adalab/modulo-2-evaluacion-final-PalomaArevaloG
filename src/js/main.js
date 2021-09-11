@@ -1,4 +1,6 @@
+/* eslint-disable indent */
 'use strict';
+
 // Variables
 const input = document.querySelector('.js_input');
 const btnSearch = document.querySelector('.js_btn-search');
@@ -11,14 +13,16 @@ let arrayShows = [];
 let arrayFavs = [];
 
 //Función para búsqueda Fetch
-function handleSearch(ev) {
-    ev.preventDefault();
+function handleSearch(e) {
+    e.preventDefault();
     let shows = input.value;
     fetch(`//api.tvmaze.com/search/shows?q=${shows}`)
         .then((response) => response.json())
         .then((data) => {
             arrayShows = data;
             paintShows();
+            paintFavs();
+            setInLocalStorage();
         });
 }
 //Función para pintar la búsqueda
@@ -92,28 +96,47 @@ function isFavorite(data) {
     }
 }
 //Función para pintar los favoritos
-function paintFavs(ev) {
+function paintFavs() {
     let htmlFav = '';
     for (const fav of arrayFavs) {
         if (fav.show.image === null) {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
+            htmlFav += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-trash-alt icon"></i>`;
             htmlFav += `</div></li>`;
         } else {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image" src="${fav.show.image.medium}"/>`;
+            htmlFav += `<img class="js-image" src="${fav.show.image.medium}"/><i class="fas fa-trash-alt"></i>`;
             htmlFav += `</div></li>`;
         }
     }
     favorites.innerHTML = htmlFav;
+    setInLocalStorage(); //almaceno favs en localstorage
 }
-
-// //almacenar
-// function LocalStorage() {}
+//funcion para almacenar en local storage
+function setInLocalStorage() {
+    const stringFavs = JSON.stringify(arrayFavs);
+    localStorage.setItem('arrayFavs', stringFavs);
+}
+//funcion para buscar en local storage
+function getLocalStorage() {
+    //Obtenemos lo que hay en el local storage
+    const localStorageFavs = localStorage.getItem('arrayFavs');
+    //preguntamos si lo que me ha devuelto está vacío o no
+    if (localStorageFavs === null) {
+        //si está vacio ejecuto fetch
+        handleSearch();
+        //y si no pintamos lo que está en localstorage
+    } else {
+        const arrayLocalStorage = JSON.parse(localStorageFavs);
+        arrayFavs = arrayLocalStorage;
+        paintFavs();
+    }
+}
+getLocalStorage();
 // //quitar favs
 // function removeFavs() {}
 //escucho el boton de búsqueda

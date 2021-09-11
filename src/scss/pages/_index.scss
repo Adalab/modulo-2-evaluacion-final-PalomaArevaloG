@@ -43,6 +43,12 @@
     font-family: $font-main;
 }
 
+.btn-reset {
+    background-color: $color-secondary;
+    color: $color-bg;
+    font-family: $font-main;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -80,4 +86,9 @@ img {
 
 .favorite .showName {
     color: white;
+}
+
+.fa-trash-alt {
+    color: $color-secondary;
+    padding: 10px;
 }
