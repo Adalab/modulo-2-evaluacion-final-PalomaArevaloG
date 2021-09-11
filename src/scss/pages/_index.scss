@@ -11,42 +11,29 @@
     margin: 10px;
 }
 
-.showName {
-    color: $color-secondary;
-    font-size: 10px;
-    @media all and (min-width: 768px) {
-        font-size: 30px;
-    }
-}
-
-.list-title {
-    color: $color-secondary;
-    @media all and (min-width: 768px) {
-        font-size: 30px;
-    }
-}
-
-.fav-title {
-    color: $color-secondary;
-    @media all and (min-width: 768px) {
-        font-size: 30px;
-    }
+.form {
+    width: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .input {
     font-family: $font-main;
+    width: 20em;
 }
 
-.btn-search {
-    background-color: $color-secondary;
-    color: $color-bg;
-    font-family: $font-main;
-}
-
-.btn-reset {
-    background-color: $color-secondary;
-    color: $color-bg;
-    font-family: $font-main;
+.btn {
+    &-search {
+        background-color: $color-secondary;
+        color: $color-bg;
+        font-family: $font-main;
+    }
+    &-reset {
+        background-color: $color-secondary;
+        color: $color-bg;
+        font-family: $font-main;
+    }
 }
 
 .container {
@@ -55,7 +42,56 @@
     margin: 10px;
 }
 
-img {
+.favs {
+    margin: 10px;
+}
+
+.fav {
+    margin: 10px;
+    &-title {
+        color: $color-secondary;
+        font-size: 20px;
+        @media all and (min-width: 768px) {
+            font-size: 30px;
+        }
+    }
+}
+
+.lists {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list {
+    //&-show {}
+    &-title {
+        color: $color-secondary;
+        font-size: 20px;
+        @media all and (min-width: 768px) {
+            font-size: 30px;
+        }
+    }
+}
+
+.result {
+    margin: 10px;
+    max-width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.showName {
+    color: $color-secondary;
+    font-size: 15px;
+    @media all and (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.img {
     width: 30px;
     height: 30px;
     @media all and (min-width: 768px) {
@@ -64,24 +100,9 @@ img {
     }
 }
 
-.favs {
-    margin: 10px 40px 10px 40px;
-}
-
-.lists {
-    margin: 10px;
-}
-
-.fav {
-    margin: 10px;
-}
-
-.result {
-    margin: 10px;
-}
-
 .favorite {
     background-color: $color-secondary;
+    max-width: 20em;
 }
 
 .favorite .showName {

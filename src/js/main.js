@@ -43,13 +43,13 @@ function paintShows() {
             html += `<li id="${data.show.id}" class="list-show js_list-show ${favClass}">`;
             html += `<div class="result js_result ">`;
             html += `<h2 class="js_showName showName">${data.show.name}</h2>`;
-            html += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
+            html += `<img class="js-image img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
             html += `</div></li>`;
         } else {
             html += `<li id="${data.show.id}" class="list-show js_list-show ${favClass}">`;
             html += `<div class="result js_result ">`;
             html += `<h2 class="js_showName showName">${data.show.name}</h2>`;
-            html += `<img class="js-image" src="${data.show.image.medium}"/>`;
+            html += `<img class="js-image img" src="${data.show.image.medium}"/>`;
             html += `</div></li>`;
         }
     }
@@ -103,13 +103,13 @@ function paintFavs() {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-trash-alt icon"></i>`;
+            htmlFav += `<img class="js-image img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-trash-alt icon"></i>`;
             htmlFav += `</div></li>`;
         } else {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image" src="${fav.show.image.medium}"/><i class="fas fa-trash-alt"></i>`;
+            htmlFav += `<img class="js-image img" src="${fav.show.image.medium}"/><i class="fas fa-trash-alt"></i>`;
             htmlFav += `</div></li>`;
         }
     }
