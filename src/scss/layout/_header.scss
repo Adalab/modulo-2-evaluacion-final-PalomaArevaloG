@@ -1,5 +1,18 @@
 .page__header {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: $color-secondary 2px solid;
+}
+
+.brand {
+    font-family: $font-brand;
+    color: $color-secondary;
+    font-size: 40px;
 }

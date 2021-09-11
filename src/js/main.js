@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 // Variables
-const input = document.querySelector(".js_input");
-const btnSearch = document.querySelector(".js_btn-search");
-let favorites = document.querySelector(".js_fav");
-let list = document.querySelector(".js_list");
+const input = document.querySelector('.js_input');
+const btnSearch = document.querySelector('.js_btn-search');
+let favorites = document.querySelector('.js_fav');
+let list = document.querySelector('.js_list');
 
 //variable para el array que de el fetch
 let arrayShows = [];
-//VARIABLE DE FAVORITOS
+//variable de favoritos
 let arrayFavs = [];
 
-// //busqueda
+//Función para búsqueda Fetch
 function handleSearch(ev) {
     ev.preventDefault();
     let shows = input.value;
@@ -18,35 +18,33 @@ function handleSearch(ev) {
         .then((response) => response.json())
         .then((data) => {
             arrayShows = data;
-
             paintShows();
         });
 }
-//pintar busqueda
+//Función para pintar la búsqueda
 function paintShows() {
-    let html = "";
-    let favClass = "";
-    //si el elto que quiero pintar está en arrayfav añadele la clase favorite
-
+    let html = '';
+    //si el elemento que quiero pintar está en arrayfav añadele la clase favorite
+    let favClass = '';
     for (const data of arrayShows) {
         const isFav = isFavorite(data);
         if (isFav) {
-            favClass = "favorite";
+            favClass = 'favorite';
             favorites.innerHTML += html;
         } else {
-            favClass = "";
+            favClass = '';
         }
 
         if (data.show.image === null) {
             html += `<li id="${data.show.id}" class="list-show js_list-show ${favClass}">`;
             html += `<div class="result js_result ">`;
-            html += `<h2 class="js_showName">${data.show.name}</h2>`;
+            html += `<h2 class="js_showName showName">${data.show.name}</h2>`;
             html += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
             html += `</div></li>`;
         } else {
             html += `<li id="${data.show.id}" class="list-show js_list-show ${favClass}">`;
             html += `<div class="result js_result ">`;
-            html += `<h2 class="js_showName">${data.show.name}</h2>`;
+            html += `<h2 class="js_showName showName">${data.show.name}</h2>`;
             html += `<img class="js-image" src="${data.show.image.medium}"/>`;
             html += `</div></li>`;
         }
@@ -54,7 +52,7 @@ function paintShows() {
     list.innerHTML = html;
     listenShows();
 }
-//PINTAR FAVS
+//Función para coger los favoritos
 function handleFavs(ev) {
     const selectedShow = parseInt(ev.currentTarget.id);
 
@@ -62,7 +60,7 @@ function handleFavs(ev) {
         return fav.show.id === selectedShow;
     });
     const favoritesFound = arrayFavs.findIndex((fav) => {
-        return fav.id === selectedShow;
+        return fav.show.id === selectedShow;
     });
     if (favoritesFound === -1) {
         arrayFavs.push(objectClicked);
@@ -74,14 +72,15 @@ function handleFavs(ev) {
     paintFavs();
 }
 
+// Función para coger los favoritos
 function listenShows() {
-    const listShows = document.querySelectorAll(".js_list-show");
+    const listShows = document.querySelectorAll('.js_list-show');
 
     for (const showEl of listShows) {
-        showEl.addEventListener("click", handleFavs);
+        showEl.addEventListener('click', handleFavs);
     }
 }
-//verifica si es favorito
+//Función que verifica si es favorito
 function isFavorite(data) {
     const favoriteFound = arrayFavs.find((fav) => {
         return fav.show.id === data.show.id;
@@ -92,20 +91,20 @@ function isFavorite(data) {
         return true;
     }
 }
-//pintar favs
+//Función para pintar los favoritos
 function paintFavs(ev) {
-    let htmlFav = "";
+    let htmlFav = '';
     for (const fav of arrayFavs) {
         if (fav.show.image === null) {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
-            htmlFav += `<h2 class="js_showName">${fav.show.name}</h2>`;
+            htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
             htmlFav += `<img class="js-image" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/>`;
-            html += `</div></li>`;
+            htmlFav += `</div></li>`;
         } else {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
-            htmlFav += `<h2 class="js_showName">${fav.show.name}</h2>`;
+            htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
             htmlFav += `<img class="js-image" src="${fav.show.image.medium}"/>`;
             htmlFav += `</div></li>`;
         }
@@ -117,6 +116,5 @@ function paintFavs(ev) {
 // function LocalStorage() {}
 // //quitar favs
 // function removeFavs() {}
-//escucho el boton
-
-btnSearch.addEventListener("click", handleSearch);
+//escucho el boton de búsqueda
+btnSearch.addEventListener('click', handleSearch);
