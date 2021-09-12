@@ -12,15 +12,14 @@
 }
 
 .form {
-    width: 30em;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 }
 
 .input {
     font-family: $font-main;
-    width: 20em;
 }
 
 .btn {

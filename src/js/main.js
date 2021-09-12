@@ -13,8 +13,8 @@ let arrayShows = [];
 let arrayFavs = [];
 
 //Función para búsqueda Fetch
-function handleSearch(e) {
-    e.preventDefault();
+function handleSearch(ev) {
+    ev.preventDefault();
     let shows = input.value;
     fetch(`//api.tvmaze.com/search/shows?q=${shows}`)
         .then((response) => response.json())
