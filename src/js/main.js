@@ -6,6 +6,8 @@ const input = document.querySelector('.js_input');
 const btnSearch = document.querySelector('.js_btn-search');
 let favorites = document.querySelector('.js_fav');
 let list = document.querySelector('.js_list');
+let deleteIcon = document.querySelector('.js_icon');
+let btnReset = document.querySelector('.js_btn-reset');
 
 //variable para el array que de el fetch
 let arrayShows = [];
@@ -13,6 +15,7 @@ let arrayShows = [];
 let arrayFavs = [];
 getLocalStorage();
 //Función para búsqueda Fetch
+
 function handleSearch(ev) {
     ev.preventDefault();
     let shows = input.value;
@@ -103,13 +106,13 @@ function paintFavs() {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-trash-alt icon"></i>`;
+            htmlFav += `<img class="js-image img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-trash-alt js_icon"></i>`;
             htmlFav += `</div></li>`;
         } else {
             htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
-            htmlFav += `<img class="js-image img" src="${fav.show.image.medium}"/><i class="fas fa-trash-alt"></i>`;
+            htmlFav += `<img class="js-image img" src="${fav.show.image.medium}"/><i class="fas fa-trash-alt js_icon"></i>`;
             htmlFav += `</div></li>`;
         }
     }
@@ -137,7 +140,19 @@ function getLocalStorage() {
     }
 }
 
-// //quitar favs
-// function removeFavs() {}
+// quitar favs
+//funcion para quitar de favoritos al pulsar el icono
+function removeFav(event) {
+    const clickIcon = event.currentTarget;
+}
+
+//funcion para quitar todos los favoritos al pulsar reset
+function removeAllFavs() {
+    arrayFavs = [];
+    setInLocalStorage();
+    paintFavs();
+}
+//escucho el botón de borrar
+btnReset.addEventListener('click', removeAllFavs);
 //escucho el boton de búsqueda
 btnSearch.addEventListener('click', handleSearch);
