@@ -15,7 +15,7 @@
     width: 30em;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .input {
@@ -28,6 +28,7 @@
         background-color: $color-secondary;
         color: $color-bg;
         font-family: $font-main;
+        margin: 10px;
     }
     &-reset {
         background-color: $color-secondary;
