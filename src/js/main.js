@@ -11,7 +11,7 @@ let list = document.querySelector('.js_list');
 let arrayShows = [];
 //variable de favoritos
 let arrayFavs = [];
-
+getLocalStorage();
 //Función para búsqueda Fetch
 function handleSearch(ev) {
     ev.preventDefault();
@@ -136,7 +136,7 @@ function getLocalStorage() {
         paintFavs();
     }
 }
-getLocalStorage();
+
 // //quitar favs
 // function removeFavs() {}
 //escucho el boton de búsqueda
