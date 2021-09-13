@@ -1,24 +1,57 @@
--   [ x] Búsqueda
-    -   [ x]Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de TVMaze para búsqueda de series. Os recomendamos echar un vistazo al JSON que devuelve una petición de búsqueda para ver qué datos son los que necesitamos: https://api.tvmaze.com/search/shows?q=girls
-    -   [x ]Para construir la URL de búsqueda hay que recoger el texto que ha introducido la usuaria en el campo de búsqueda.
-    -   [x] Por cada show contenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos una imagen de la serie y el título.
-    -   [x] Algunas de las series que devuelve el API no tienen imagen. En ese caso hay que mostrar una imagen de relleno. Podemos crear una imagen de relleno con el servicio de placeholder.com donde en la propia URL indicamos el tamaño, colores, texto: https://via.placeholder.com/210x295/ffffff/666666/?text=TV.
-        -   [x]Si buscamos la serie dexter veremos que algunas de las series devueltas por el API no tienen imagen.
-        -   [x]Si buscamos la serie tronos veremos que todas las series devueltas por el API sí tienen imagen.
-    -   [x]Para pintar la información en la página se puede elegir entre hacerlo de forma básica con innerHTML o manipulando de forma avanzada el DOM.
-        notas
+# Evaluación módulo 1 Adalab
 
-*   Usad la dirección del enlace anterior, pero sin https: ni http:
-    //api.tvmaze.com/search/shows?q=girls
-*   Usad ev.preventDefault() para evitar que se recargue la página involuntariamente.
+Aquí os presento mi proyecto de evalución del módulo 2
 
--   [] Favoritos -[x]Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son nuestras series favoritas.Para ello, al hacer clic sobre una serie debe pasar lo siguiente: -[x]El color de fondo y el de fuente se intercambian, indicando que es una serie favorita. -[x]Hay que mostrar un listado en la parte izquierda de la pantalla, debajo del formulario de búsqueda,con las series favoritas. Os recomendamos crear un variable o constante de tipo array en JS para almacenar las series favoritas. -[x]Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra búsqueda
+## ¿Qué es?
 
--   [] Almacenamiento local
-    -[]Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos se debe mostrarse.
--   [] Bonus: Borrar favoritos
-    -   []Como bonus, os proponemos la opción de borrar favoritos. Al hacer clic sobre el icono de una 'x' al lado de cada favorito, hay que borrar el favorito clicado de la lista y del localStorage.
-    -   []Para terminar de rematar nuestra app de series, nos gustaría poder añadir/quitar como favorito al hacer clic sobre una serie del lado de la derecha.
-    -   []Y que, si realizamos una nueva búsqueda y sale una serie que ya es favorita, aparezca ya resaltada en los resultados de búsqueda (con colores de fondo y texto intercambiados).
-    -   [] Y ya sería fantástico si al final de la lista de favoritos hay un botón para borrarlos todos los favoritos a la vez.
--   [] Bonus: Afinar maquetación
+Se trata de una aplicación web de búsqueda de series de TV que nos permite marcar y desmarcar series como favoritas y guardarlas en el LocalStorage
+
+## ¿Qué partes tiene?
+
+-   **Maquetación**
+
+    Tenemos un header con el título de la página y un main que incluye: - Formulario para la búsqueda de series - Sección para listar los resultados de la búsqueda - Sección para visualizar los favoritos marcados.
+    Se ha querido homenajear el estilo de la desaparecida cadena de videoclubs Blockbuster buscando su tipografía y colores corporativos (el logo no lleva la misma tipografía sino similar ya que tiene copyright)
+
+-   **Búsqueda**
+
+    La usuaria introduce una palabra en el campo con el placeholder "Introduce aquí tu serie"
+
+    Al hacer click sobre el botón Buscar, la aplicación se conecta al API abierto de TVMaze para la búsqueda de series y nos devuelve en la sección Resultados de la búsqueda el nombre de las 10 primeras series que coinciden con la palabra introducida junto con su imagen (si el API no tiene imagen nos devolverá una imagen de relleno)
+
+-   **Favoritos**
+    Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son nuestras series favoritas.
+    Para ello, al hacer clic sobre una serie:
+
+    -   El color de fondo de la misma cambia a amarillo indicando que es una serie favorita.
+    -   Se muestra un listado en la parte izquierda de la pantalla, debajo del formulario de búsqueda, con las series favoritas.
+
+    Las series favoritas siguen apareciendo a la izquierda aunque la usuaria realice otra búsqueda
+
+    Además tenemos la opción de borrar favoritos:
+
+    -   Al hacer clic sobre el icono de una 'x' debajo de cada favorito, se borra el favorito clicado de la lista y del localStorage.
+    -   Si clicamos en una serie que figura con fondo amarillo en la seccion de resultados la quita de favoritos
+    -   Al realizar una nueva búsqueda, si sale una serie que ya es favorita aparece resaltada en los resultados de búsqueda
+    -   Al final de la sección de favoritos tenemos un botón que borra todas las favoritas
+
+-   **Almacenamiento local**
+    Se almacena el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado
+    de favoritos se muestra.
+
+## ¿Qué teconologías tiene?
+
+He podido aplicar el temario del curso con las siguientes tecnologías:
+
+-   HTML5, CSS3 (Sass, Flexbox, Grid, variables y MediaQueries)
+-   Adalab Web Starter Kit (Gulp y Node)
+-   GitHub (branches y pages).
+-   JavaScript
+-   Papel y lapiz para los bocetos.
+
+## ¿Cómo se ejecuta?
+
+1. Descarga este repositorio en zip o clonalo tu dispositivo con el comando `git clone`
+2. Abre una terminal en la carpeta Master.
+3. Instala dependencias locales con `npm install`
+4. Arranca el proyecto con `npm start`
