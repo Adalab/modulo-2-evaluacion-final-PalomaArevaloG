@@ -81,7 +81,7 @@ function handleFavs(ev) {
 
 // Función para coger los favoritos
 function listenShows() {
-    const listShows = document.querySelectorAll('.js_fav-show');
+    const listShows = document.querySelectorAll('.js_list-show');
 
     for (const showEl of listShows) {
         showEl.addEventListener('click', handleFavs);
@@ -103,13 +103,13 @@ function paintFavs() {
     let htmlFav = '';
     for (const fav of arrayFavs) {
         if (fav.show.image === null) {
-            htmlFav += `<li id="${fav.show.id}" class="list-show js_fav-show">`;
+            htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
             htmlFav += `<img class="js-image img-fav" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i class="fas fa-times js_icon"></i>`;
             htmlFav += `</div></li>`;
         } else {
-            htmlFav += `<li id="${fav.show.id}" class="list-show js_fav-show">`;
+            htmlFav += `<li id="${fav.show.id}" class="list-show js_list-show">`;
             htmlFav += `<div class="result js_result ">`;
             htmlFav += `<h2 class="js_showName showName">${fav.show.name}</h2>`;
             htmlFav += `<img class="js-image img-fav" src="${fav.show.image.medium}"/><i class="fas fa-times js_icon"></i>`;
