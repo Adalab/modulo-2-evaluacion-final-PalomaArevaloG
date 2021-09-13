@@ -20,6 +20,7 @@ Se trata de una aplicación web de búsqueda de series de TV que nos permite mar
     Al hacer click sobre el botón Buscar, la aplicación se conecta al API abierto de TVMaze para la búsqueda de series y nos devuelve en la sección Resultados de la búsqueda el nombre de las 10 primeras series que coinciden con la palabra introducida junto con su imagen (si el API no tiene imagen nos devolverá una imagen de relleno)
 
 -   **Favoritos**
+
     Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son nuestras series favoritas.
     Para ello, al hacer clic sobre una serie:
 
@@ -36,6 +37,7 @@ Se trata de una aplicación web de búsqueda de series de TV que nos permite mar
     -   Al final de la sección de favoritos tenemos un botón que borra todas las favoritas
 
 -   **Almacenamiento local**
+
     Se almacena el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado
     de favoritos se muestra.
 
@@ -46,7 +48,8 @@ He podido aplicar el temario del curso con las siguientes tecnologías:
 -   HTML5, CSS3 (Sass, Flexbox, Grid, variables y MediaQueries)
 -   Adalab Web Starter Kit (Gulp y Node)
 -   GitHub (branches y pages).
--   JavaScript
+-   JavaScript.
+-   API externa utilizada con AJAX.
 -   Papel y lapiz para los bocetos.
 
 ## ¿Cómo se ejecuta?
