@@ -1,4 +1,4 @@
-# Evaluación módulo 1 Adalab
+# Evaluación módulo 2 Adalab
 
 Aquí os presento mi proyecto de evalución del módulo 2
 
