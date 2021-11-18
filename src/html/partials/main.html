@@ -1,21 +1,29 @@
 <main class="page__main">
-    <h1 class="title">Buscador de series</h1>
-    <form class="form">
-        <input class="input js_input" type="text" placeholder="Introduce aquí tu serie" value="" />
+	<h1 class="title">Buscador de series</h1>
+	<form class="form">
+		<input
+			class="input js_input"
+			type="text"
+			placeholder="Introduce aquí tu serie"
+			value=""
+		/>
 
-        <button class="btn-search js_btn-search">Buscar</button>
-    </form>
+		<button class="btn-search js_btn-search">Buscar</button>
+	</form>
 
-    <section class="container js_container">
-        <div class="favs">
-            <h2 class="fav-title">Mis series favoritas</h2>
-            <ul class="fav js_fav"></ul>
-            <button class="btn-reset js_btn-reset">Reset</button>
-        </div>
-        <div class="lists">
-            <h2 class="list-title">Resultado de la búsqueda</h2>
-            <p class="js-results"></p>
-            <ul class="list js_list"></ul>
-        </div>
-    </section>
+	<section class="container js_container">
+		<div class="favs">
+			<h2 class="fav-title">Mis series favoritas</h2>
+			<ul class="fav js_fav"></ul>
+			<button class="btn-reset js_btn-reset">Reset</button>
+		</div>
+		<div class="lists">
+			<div class="results">
+				<h2 class="list-title">Resultado de la búsqueda</h2>
+				<p class="js-results number"></p>
+			</div>
+
+			<ul class="list js_list"></ul>
+		</div>
+	</section>
 </main>

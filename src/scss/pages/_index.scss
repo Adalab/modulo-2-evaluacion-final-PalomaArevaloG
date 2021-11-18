@@ -1,136 +1,147 @@
 .page__main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .page {
-    width: 100%;
+	width: 100%;
 }
 
 .title {
-    color: $color-secondary;
-    font-size: 30px;
-    margin: 10px;
+	color: $color-secondary;
+	font-size: 30px;
+	margin: 10px;
 }
 
 .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
 }
 
 .input {
-    font-family: $font-main;
+	font-family: $font-main;
 }
 
 .btn {
-    &-search {
-        background-color: $color-secondary;
-        color: $color-bg;
-        font-family: $font-main;
-        margin: 10px;
-    }
-    &-reset {
-        background-color: $color-secondary;
-        color: $color-bg;
-        font-family: $font-main;
-    }
+	&-search {
+		background-color: $color-secondary;
+		color: $color-bg;
+		font-family: $font-main;
+		margin: 10px;
+	}
+	&-reset {
+		background-color: $color-secondary;
+		color: $color-bg;
+		font-family: $font-main;
+	}
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
 }
 
 .favs {
-    margin: 10px;
+	margin: 10px;
 }
 
 .fav {
-    margin: 10px;
-    &-title {
-        color: $color-secondary;
-        font-size: 20px;
-        @media all and (min-width: 768px) {
-            font-size: 30px;
-        }
-    }
+	margin: 10px;
+	&-title {
+		color: $color-secondary;
+		font-size: 20px;
+		@media all and (min-width: 768px) {
+			font-size: 30px;
+		}
+	}
 }
 
 .lists {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .list {
-    @media all and (min-width: 768px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-    &-show {
-        margin: 10px;
-        padding: 10px;
-    }
-    &-title {
-        color: $color-secondary;
-        font-size: 20px;
-        @media all and (min-width: 768px) {
-            font-size: 30px;
-        }
-    }
+	@media all and (min-width: 768px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+	&-show {
+		margin: 10px;
+		padding: 10px;
+	}
+	&-title {
+		color: $color-secondary;
+		font-size: 20px;
+		@media all and (min-width: 768px) {
+			font-size: 30px;
+		}
+	}
 }
 
 .result {
-    margin: 10px;
-    max-width: 20em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	margin: 10px;
+	max-width: 20em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+.results {
+	display: flex;
+	flex-direction: row;
+	color: $color-secondary;
 
+	font-size: 30px;
+}
+.number {
+	margin-left: 20px;
+	border: solid 2px $color-secondary;
+	width: 40px;
+}
 .showName {
-    color: $color-secondary;
-    font-size: 15px;
-    margin-bottom: 10px;
-    @media all and (min-width: 768px) {
-        font-size: 20px;
-    }
+	color: $color-secondary;
+	font-size: 15px;
+	margin-bottom: 10px;
+	@media all and (min-width: 768px) {
+		font-size: 20px;
+	}
 }
 
 .img {
-    width: 90px;
-    height: 175px;
-    @media all and (min-width: 768px) {
-        width: 210px;
-        height: 295px;
-    }
-    &-fav {
-        width: 80px;
-        height: 165px;
-        @media all and (min-width: 768px) {
-            width: 160px;
-            height: 245px;
-        }
-    }
+	width: 90px;
+	height: 175px;
+	@media all and (min-width: 768px) {
+		width: 210px;
+		height: 295px;
+	}
+	&-fav {
+		width: 80px;
+		height: 165px;
+		@media all and (min-width: 768px) {
+			width: 160px;
+			height: 245px;
+		}
+	}
 }
 
 .favorite {
-    background-color: $color-secondary;
-    max-width: 20em;
+	background-color: $color-secondary;
+	max-width: 20em;
 }
 
 .favorite .showName {
-    color: white;
+	color: white;
 }
 
 .fa-times {
-    color: $color-secondary;
-    padding: 10px;
+	color: $color-secondary;
+	padding: 10px;
 }
