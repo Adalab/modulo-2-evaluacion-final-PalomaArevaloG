@@ -27,6 +27,8 @@
 }
 
 .btn {
+	width: 2em;
+	height: 1em;
 	&-search {
 		background-color: $color-secondary;
 		color: $color-bg;
@@ -96,15 +98,16 @@
 }
 .results {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	color: $color-secondary;
-
 	font-size: 30px;
+	align-items: center;
 }
 .number {
-	margin-left: 20px;
 	border: solid 2px $color-secondary;
-	width: 40px;
+	width: 2em;
+	height: 1em;
+	margin-top: 10px;
 }
 .showName {
 	color: $color-secondary;
